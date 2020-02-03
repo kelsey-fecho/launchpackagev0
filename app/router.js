@@ -3,6 +3,7 @@ import {Dimensions, Platform} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation';
+import Header from './components/header'
 
 import Welcome from './screens/welcome.js';
 import Event from './screens/events.js';
@@ -10,55 +11,99 @@ import Ecomm from './screens/ecomm.js';
 import Screen from './screens/screens.js';
 import Settings from './screens/settings.js';
 
-//let screen = Dimensions.get('window');
+let screen = Dimensions.get('window');
 
-const routes = {
+const HomeStack = createStackNavigator({
   'Home': {
     screen: Welcome,
-    navigationOptions: {
-      title: 'Home',
-      //drawerLabel: 'Home'
-    },
-  },
+    navigationOptions: ({navigation}) => {
+      return {
+        headerTitle: () => < Header navigation={navigation}/>,
+      }
+    }
+  }},
+  {defaultNavigationOptions: {
+    headerTintColor: '#444',
+    headerStyle: { backgroundColor: '#eee', height: 80},
+  }
+});
 
+const EventStack = createStackNavigator({
   'Events': {
     screen: Event,
-    navigationOptions: {
-      title: "Events",
-      //drawerLabel: "Events"
-    },
-  },
+    navigationOptions: ({navigation}) => {
+      return {
+        headerTitle: () => < Header navigation={navigation}/>,
+      }
+    }
+  }},
+  {defaultNavigationOptions: {
+    headerTintColor: '#444',
+    headerStyle: { backgroundColor: '#eee', height: 80},
+  }
+});
 
+const eCommStack = createStackNavigator({
   'eCommerce': {
     screen: Ecomm,
-    navigationOptions: {
-      title: "eCommerce",
-      //drawerLabel: "eCommerce"
-    },
-  },
+    navigationOptions: ({navigation}) => {
+      return {
+        headerTitle: () => < Header navigation={navigation}/>,
+      }
+    }
+  }},
+  {defaultNavigationOptions: {
+    headerTintColor: '#444',
+    headerStyle: { backgroundColor: '#eee', height: 80},
+  }
+});
 
+const ScreenStack = createStackNavigator({
   'Screens': {
     screen: Screen,
-    navigationOptions: {
-      title: "Screens",
-      //drawerLabel: "Screens"
-    },
-  },
+    navigationOptions: ({navigation}) => {
+      return {
+        headerTitle: () => < Header navigation={navigation}/>,
+      }
+    }
+  }},
+  {defaultNavigationOptions: {
+    headerTintColor: '#444',
+    headerStyle: { backgroundColor: '#eee', height: 80},
+  }
+});
 
-};
-
-const topmenu = {
+const SettingsStack = createStackNavigator({
   'Settings': {
     screen: Settings,
-    navigationOptions: {
-      title: "Settings",
-      //drawerLabel: "Screens"
-    },
+    navigationOptions: ({navigation}) => {
+      return {
+        headerTitle: () => < Header navigation={navigation}/>,
+      }
+    }
+  }},
+  {defaultNavigationOptions: {
+    headerTintColor: '#444',
+    headerStyle: { backgroundColor: '#eee', height: 80},
+  }
+});
+
+const drawerNavigator = createDrawerNavigator({
+  Home: {
+    screen: HomeStack,
   },
-}
+  Events: {
+    screen: EventStack,
+  },
+  eCommerce: {
+    screen: eCommStack,
+  },
+  Screens: {
+    screen: ScreenStack,
+  },
+  Settings: {
+    screen: SettingsStack,
+  },
+});
 
-const RootDrawerNavigator = createDrawerNavigator(routes);
-
-const HeaderNavigator = createStackNavigator(topmenu);
-
-export default createAppContainer(RootDrawerNavigator);
+export default createAppContainer(drawerNavigator);
