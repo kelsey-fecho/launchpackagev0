@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import MParticle from 'react-native-mparticle'
 
 
 export default class Settings extends Component {

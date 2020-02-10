@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import '../config/clientoptions'
+import MParticle from 'react-native-mparticle'
 
 export default class Welcome extends Component {
   static NavigationOptions = {
