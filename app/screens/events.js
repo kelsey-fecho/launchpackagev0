@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import '../config/clientoptions'
 
 export default class Event extends Component {
   render() {

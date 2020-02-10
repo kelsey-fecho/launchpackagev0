@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import '../config/clientoptions'
 
 export default class Welcome extends Component {
   static NavigationOptions = {
@@ -13,7 +14,7 @@ export default class Welcome extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-            Welcome Screen
+            Welcome, {CUSTOMER_NAME}!
         </Text>
       </View>
     );

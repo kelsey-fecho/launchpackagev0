@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import '../config/clientoptions'
 
 export default class Ecomm extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-            Ecomm Screen
+            Trigger events below to see how customer and product data is handled during your eCommerce flow.
         </Text>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a Product Impression.')}
+          onPress={() => alert('You just triggered a product impression.')}
           style={styles.button}>
-          <Text style={styles.buttonText}>Product Impression</Text>
+          <Text style={styles.buttonText}>{PRODUCT} Impression</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => alert('You just triggered a Product View.')}
           style={styles.button}>
-          <Text style={styles.buttonText}>Product View</Text>
+          <Text style={styles.buttonText}>{PRODUCT} View</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -40,7 +41,7 @@ export default class Ecomm extends Component {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You have returned your item.')}
+          onPress={() => alert('You have refunded your item.')}
           style={styles.button}>
           <Text style={styles.buttonText}>Refund</Text>
         </TouchableOpacity>
@@ -60,6 +61,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#fff',
+    margin: 15,
+    justifyContent: 'center',
   },
   button: {
     backgroundColor: '#6bfacf',
