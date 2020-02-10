@@ -12,37 +12,72 @@ export default class Ecomm extends Component {
         </Text>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a product impression.')}
+          onPress={() =>
+            const product = new MParticle.Product('Test product that was viewed', '5678', 29.99)
+            const impression = new MParticle.Impression('Test impression list name', [product])
+            const event = MParticle.CommerceEvent.createImpressionEvent([impression])
+
+            MParticle.logCommerceEvent(event)
+          }
           style={styles.button}>
           <Text style={styles.buttonText}>{PRODUCT} Impression</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a Product View.')}
+          onPress={() =>
+            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.ProductView, [product])
+
+            MParticle.logCommerceEvent(event)
+          }
           style={styles.button}>
           <Text style={styles.buttonText}>{PRODUCT} View</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You\'ve added an item to your cart')}
+          onPress={() =>
+            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.AddToCart, [product], transactionAttributes)
+
+            MParticle.logCommerceEvent(event)
+          }
           style={styles.button}>
           <Text style={styles.buttonText}>Add To Cart</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You are checking out now.')}
+          onPress={() =>
+            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Checkout, [product], transactionAttributes)
+
+            MParticle.logCommerceEvent(event)
+          }
           style={styles.button}>
           <Text style={styles.buttonText}>Checkout</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('Purchase Complete!')}
+          onPress={() =>
+            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Purchase, [product], transactionAttributes)
+
+            MParticle.logCommerceEvent(event)
+          }
           style={styles.button}>
           <Text style={styles.buttonText}>Purchase</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You have refunded your item.')}
+          onPress={() =>
+            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Refund, [product], transactionAttributes)
+
+            MParticle.logCommerceEvent(event)
+          }
           style={styles.button}>
           <Text style={styles.buttonText}>Refund</Text>
         </TouchableOpacity>

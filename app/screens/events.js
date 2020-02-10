@@ -12,19 +12,19 @@ export default class Event extends Component {
         </Text>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a custom Navigation Event.')}
+          onPress={() => MParticle.logEvent('Navigation Event', MParticle.EventType.Navigation, { 'Test key': 'Test value' })}
           style={styles.button}>
           <Text style={styles.buttonText}>Navigation Event</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a custom Search Event.')}
+          onPress={() => MParticle.logEvent('Search Event', MParticle.EventType.Search, { 'Test key': 'Test value' })}
           style={styles.button}>
           <Text style={styles.buttonText}>Search Event</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a custom Other Event.')}
+          onPress={() => MParticle.logEvent('Other Event', MParticle.EventType.Other, { 'Test key': 'Test value' })}
           style={styles.button}>
           <Text style={styles.buttonText}>Other Event</Text>
         </TouchableOpacity>

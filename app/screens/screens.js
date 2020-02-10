@@ -12,21 +12,21 @@ export default class Screen extends Component {
         </Text>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a Page View event for the Home screen.')}
+          onPress={() => MParticle.logScreenEvent('Home Screen', { 'Test key': 'Test value' })}
           style={styles.button}>
           <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a Page View event for your account page.')}
+          onPress={() => MParticle.logScreenEvent('My Account Screen', { 'Test key': 'Test value' })}
           style={styles.button}>
           <Text style={styles.buttonText}>My Account</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => alert('You just triggered a Page View event for Weekly Deals.')}
+          onPress={() => MParticle.logScreenEvent('Deals Screen', { 'Test key': 'Test value' })}
           style={styles.button}>
-          <Text style={styles.buttonText}>Weekly Deals</Text>
+          <Text style={styles.buttonText}>Deals</Text>
         </TouchableOpacity>
       </View>
     );
