@@ -12,3 +12,4 @@ global.PRODUCT = 'Flight'
 
 
 //Options for custom client colors?
+//Load specific APIs/SDKs based on customer vertical

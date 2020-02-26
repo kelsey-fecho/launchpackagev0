@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import '../config/clientoptions'
 import MParticle from 'react-native-mparticle'
 
 export default class Welcome extends Component {
-  static NavigationOptions = {
-    title: 'TESTHEADER',
-    headerStyle: {
-      backgroundColor: 'yellow',
-    }
-  };
+  state ={
+    email:"",
+    password:"",
+  }
 
   render() {
     return (
@@ -17,7 +15,23 @@ export default class Welcome extends Component {
         <Text style={styles.title}>
             Welcome, {CUSTOMER_NAME}!
         </Text>
-      </View>
+        <TextInput
+          style={styles.inputText}
+          placeholder="Email..."
+          placeholderTextColor="#666"
+          onChangeText={text => this.setState({email:text})}
+        />
+      <TextInput
+        secureTextEntry
+        style={styles.inputText}
+        placeholder="Password..."
+        placeholderTextColor="#666"
+        onChangeText={text => this.setState({password:text})}
+      />
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+    </View>
     );
   }
 }
@@ -37,9 +51,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#6BF9CE',
     padding: 20,
     borderRadius: 5,
+    width:"70%",
   },
   buttonText: {
     fontSize: 20,
-    color: '#fff',
+    color: '#000',
+    textAlign:"center"
   },
+  inputText: {
+    height:50,
+    width:"70%",
+    backgroundColor: "#6BF9CE",
+    borderRadius:5,
+    justifyContent:"center",
+    padding:20,
+    marginBottom: 20
+  }
 });

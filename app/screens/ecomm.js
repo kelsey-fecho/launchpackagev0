@@ -13,9 +13,9 @@ export default class Ecomm extends Component {
 
         <TouchableOpacity
           onPress={() =>
-            const product = new MParticle.Product('Test product that was viewed', '5678', 29.99)
-            const impression = new MParticle.Impression('Test impression list name', [product])
-            const event = MParticle.CommerceEvent.createImpressionEvent([impression])
+            //const product = new MParticle.Product('Test product that was viewed', '5678', 29.99)
+            //const impression = new MParticle.Impression('Test impression list name', [product])
+            //const event = MParticle.CommerceEvent.createImpressionEvent([impression])
 
             MParticle.logCommerceEvent(event)
           }
@@ -25,8 +25,8 @@ export default class Ecomm extends Component {
 
         <TouchableOpacity
           onPress={() =>
-            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
-            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.ProductView, [product])
+            //const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            //const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.ProductView, [product])
 
             MParticle.logCommerceEvent(event)
           }
@@ -36,9 +36,9 @@ export default class Ecomm extends Component {
 
         <TouchableOpacity
           onPress={() =>
-            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
-            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
-            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.AddToCart, [product], transactionAttributes)
+            //const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            //const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            //const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.AddToCart, [product], transactionAttributes)
 
             MParticle.logCommerceEvent(event)
           }
@@ -48,9 +48,9 @@ export default class Ecomm extends Component {
 
         <TouchableOpacity
           onPress={() =>
-            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
-            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
-            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Checkout, [product], transactionAttributes)
+            //const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            //const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            //const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Checkout, [product], transactionAttributes)
 
             MParticle.logCommerceEvent(event)
           }
@@ -60,9 +60,9 @@ export default class Ecomm extends Component {
 
         <TouchableOpacity
           onPress={() =>
-            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
-            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
-            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Purchase, [product], transactionAttributes)
+            //const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            //const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            //const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Purchase, [product], transactionAttributes)
 
             MParticle.logCommerceEvent(event)
           }
@@ -72,9 +72,9 @@ export default class Ecomm extends Component {
 
         <TouchableOpacity
           onPress={() =>
-            const product = new MParticle.Product('Test product for cart', '1234', 19.99)
-            const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
-            const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Refund, [product], transactionAttributes)
+            //const product = new MParticle.Product('Test product for cart', '1234', 19.99)
+            //const transactionAttributes = new MParticle.TransactionAttributes('Test transaction id')
+            //const event = MParticle.CommerceEvent.createProductActionEvent(MParticle.ProductActionType.Refund, [product], transactionAttributes)
 
             MParticle.logCommerceEvent(event)
           }

@@ -9,7 +9,6 @@ import Welcome from './screens/welcome.js';
 import Event from './screens/events.js';
 import Ecomm from './screens/ecomm.js';
 import Screen from './screens/screens.js';
-import Settings from './screens/settings.js';
 
 let screen = Dimensions.get('window');
 
@@ -73,21 +72,6 @@ const ScreenStack = createStackNavigator({
   }
 });
 
-const SettingsStack = createStackNavigator({
-  'Settings': {
-    screen: Settings,
-    navigationOptions: ({navigation}) => {
-      return {
-        headerTitle: () => < Header navigation={navigation}/>,
-      }
-    }
-  }},
-  {defaultNavigationOptions: {
-    headerTintColor: '#444',
-    headerStyle: { backgroundColor: '#eee', height: 80},
-  }
-});
-
 const drawerNavigator = createDrawerNavigator({
   Home: {
     screen: HomeStack,
@@ -100,9 +84,6 @@ const drawerNavigator = createDrawerNavigator({
   },
   Screens: {
     screen: ScreenStack,
-  },
-  Settings: {
-    screen: SettingsStack,
   },
 });
 
